@@ -2,13 +2,13 @@
 
 I'ii will record my learning from 01.10.2024 to 02.06.2024.
 
-Below is my works:
-
-[Page Layout in pure HTML/CSS](https://smillzy.github.io/remote-assignments.io/week-1/assignment-2/index.html)
-
 ## week-1 1.10~1.16
 
 I'll learn about HTML, CSS, CSS flexbox, Git.
+
+Below is my works:
+
+[Page Layout in pure HTML/CSS](https://smillzy.github.io/remote-assignments.io/week-1/assignment-2/index.html)
 
 ## week-2 1.17~1.23
 
