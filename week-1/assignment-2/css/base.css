@@ -1,0 +1,124 @@
+/* Base Element Styles */
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Varela Round", sans-serif;
+  line-height: 1.6;
+  color: #3a3a3a;
+  margin: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h2,
+a {
+  color: #093a58;
+}
+h2 {
+  font-size: 20px;
+  margin: 0 1rem 4rem;
+}
+a {
+  text-decoration: none;
+}
+
+/* Base Layout Styles */
+
+/* ---- Navigation ---- */
+
+.name {
+  font-size: 1.35em;
+  margin: 0;
+}
+.main-nav {
+  margin-top: 5px;
+  font-size: 0.95em;
+  color: rgb(0, 0, 0);
+}
+.name,
+.main-nav a {
+  text-align: center;
+  display: block;
+  padding: 10px 15px;
+}
+
+.main-nav a:hover {
+  color: #093a58;
+}
+
+/* ---- Layout Containers ---- */
+.main-header {
+  flex-direction: column;
+}
+
+.banner,
+.main-footer,
+.title-in-center {
+  text-align: center;
+}
+.banner {
+  color: hsl(0, 0%, 0%);
+  background: #cfdcec;
+  padding: 3.2em 0;
+  margin-bottom: 48px;
+}
+
+.row-1,
+.row-2 {
+  text-align: center;
+}
+
+.col {
+  padding: 1em;
+  background: #8b98a8;
+  border-radius: 0;
+  margin: 0 0.5em 1.5em;
+}
+.main-footer {
+  padding: 2em 0;
+  margin: 0;
+}
+
+/* ---- Page Elements ---- */
+
+.headline {
+  margin-bottom: 0;
+}
+
+.button {
+  color: hsl(0, 0%, 0%);
+  text-align: center;
+  padding: 0.625em 1.25em;
+  background: #cfdcec;
+  border-radius: 0.35em;
+}
+
+/*  Media Queries */
+
+@media (min-width: 0px) {
+  .row-1,
+  .row-2 {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .tagline {
+    font-size: 1.4em;
+  }
+}
+@media (min-width: 1200px) {
+  .row-1,
+  .row-2 {
+    width: 90%;
+    max-width: 1200px;
+  }
+
+  .main-header {
+    max-width: 100%;
+  }
+}
