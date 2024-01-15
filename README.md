@@ -1,6 +1,6 @@
 # This is a remote-assignments
 
-I'ii will record my learning from 01.10.2024 to 02.06.2024.
+I'll record my learning from 01.10.2024 to 02.06.2024.
 
 ## week-1 1.10~1.16
 
