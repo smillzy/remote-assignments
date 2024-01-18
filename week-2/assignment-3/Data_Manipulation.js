@@ -19,6 +19,9 @@ function count(input) {
 let input1 = ["a", "b", "c", "a", "c", "a", "x"];
 console.log(count(input1));
 // should print {a:3, b:1, c:2, x:1}
+
+
+
 function groupByKey(input) {
   // your code here
 }
