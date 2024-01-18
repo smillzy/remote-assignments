@@ -1,9 +1,3 @@
-/*
-@findPosition: find the first position of the target number inside an array of numbers.
-               The position should be counted starting from 0, if you can't find the target, please return -1
-在數位數位數位數組中找到目標數位的第一個位置。位置應從0開始計算，如果找不到目標，返回-1
-*/
-
 function max(numbers) {
   // 宣告一個基準0
   let maxNumber = 0;
@@ -19,11 +13,24 @@ function max(numbers) {
 }
 
 function findPosition(numbers, target) {
-  // your code here, for-loop method preferred
+  // 宣告變數存取索引值
+  let arrayIndex;
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] === target) {
+      // 如果array中的索引值等於target
+      arrayIndex = numbers.indexOf(numbers[i]); // 則arrayIndex等於該索引值的位置
+      break; // 變更完後即跳出
+    } else {
+      // 如果都查不到
+      arrayIndex = -1; // 索引值等於-1
+    }
+  }
+  return arrayIndex;
 }
 console.log(max([1, 2, 4, 5])); // should print 5
 console.log(max([5, 2, 7, 1, 6])); // should print 7
 console.log(findPosition([5, 2, 7, 1, 6], 5)); // should print 0
 console.log(findPosition([5, 2, 7, 1, 6], 7)); // should print 2
-console.log(findPosition([5, 2, 7, 7, 7, 1, 6], 7)); // should print 2 (the first position)
+console.log(findPosition([5, 2, 7, 7, 7, 1, 6], 7)); // should print 2
 console.log(findPosition([5, 2, 7, 1, 6], 8)); // should print -1
