@@ -1,6 +1,6 @@
 function count(input) {
   // 使用 reduce 計算每個元素的數量
-  return input.reduce((allNumbers, number) => {
+  let groups = input.reduce((allNumbers, number) => {
     if (number in allNumbers) {
       // 如果number存在allNumbers，計數器加1
       allNumbers[number]++;
@@ -10,12 +10,14 @@ function count(input) {
     }
     return allNumbers;
   }, {}); // 以物件顯示
+
+  return groups;
 }
 let input1 = ["a", "b", "c", "a", "c", "a", "x"];
 console.log(count(input1)); // should print {a:3, b:1, c:2, x:1}
 
 function groupByKey(input) {
-  return input.reduce((group, current) => {
+  let groups = input.reduce((group, current) => {
     // 宣告新的key
     let newKey = current.key;
     if (newKey in group) {
@@ -27,6 +29,8 @@ function groupByKey(input) {
     }
     return group;
   }, {});
+
+  return groups;
 }
 
 let input2 = [
