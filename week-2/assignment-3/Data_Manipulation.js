@@ -1,5 +1,4 @@
 /*
-@count：return an object which shows the count of each character 返回一個對象，顯示每個字元的計數。
 @groupByKey: return an object which shows the summed-up value of each key 返回一個對象，顯示每個鍵的總和
 
 This time, you may get letters from ‘a’ to ‘z’, try to avoid using ‘if’ or ‘switch’ to split each
@@ -14,23 +13,31 @@ output should have each key only once.
 */
 
 function count(input) {
-  // your code here
+  // 使用 reduce 計算每個元素的數量
+  const countNumbers = input.reduce((allNumbers, number) => {
+    if (number in allNumbers) { // 如果number存在allNumbers，計數器加1
+      allNumbers[number]++;
+    } else {  // 如果number不存在allNumbers，初始值設為1
+      allNumbers[number] = 1;
+    }
+    return allNumbers;
+  }, {});  // 以物件顯示
+
+  return countNumbers;
 }
 let input1 = ["a", "b", "c", "a", "c", "a", "x"];
-console.log(count(input1));
-// should print {a:3, b:1, c:2, x:1}
+console.log(count(input1)); // should print {a:3, b:1, c:2, x:1}
 
+// function groupByKey(input) {
+//   // your code here
+// }
+// let input2 = [
+//   { key: "a", value: 3 },
+//   { key: "b", value: 1 },
+//   { key: "c", value: 2 },
+//   { key: "a", value: 3 },
+//   { key: "c", value: 5 },
+// ];
 
-
-function groupByKey(input) {
-  // your code here
-}
-let input2 = [
-  { key: "a", value: 3 },
-  { key: "b", value: 1 },
-  { key: "c", value: 2 },
-  { key: "a", value: 3 },
-  { key: "c", value: 5 },
-];
-console.log(groupByKey(input2));
+// console.log(groupByKey(input2));
 // should print {a:6, b:1, c:7}

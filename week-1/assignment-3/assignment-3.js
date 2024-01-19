@@ -3,15 +3,9 @@ function countAandB(input) {
   let count = 0;
 
   for (let i = 0; i < input.length; i++) {
-    if (input[i] === "a") {
-      // 如果input[i]是a，計數器就加一
+    if (input[i] === "a" || input[i] === "b") {
+      // 如果input[i]是a或b，計數器就加一
       count++;
-    } else if (input[i] === "b") {
-      // 如果input[i]是b，計數器就加一
-      count++;
-    } else {
-      // 都不是計數器維持不變
-      count = count;
     }
   }
 

@@ -1,9 +1,6 @@
 function avg(data) {
-  // 宣告累加器，用reduce加總，初始值預設0
-  let totalSum = data.products.reduce((acc, cur) => acc + cur.price, 0);
-
-  // 宣告平均，計算加總/size
-  let avarage = totalSum / data.size;
+  // 宣告平均，用reduce加總，初始值預設0，再計算加總 / size
+  let avarage = data.products.reduce((acc, cur) => acc + cur.price, 0) / data.size;
   return avarage;
 }
 
