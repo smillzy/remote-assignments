@@ -14,6 +14,8 @@ Below is my works:
 
 I'll learn about Java Script, JS DOM, jQuery.
 
+[HTML DOM and Event Handling](https://smillzy.github.io/remote-assignments.io/week-2/assignment-4/index.html)
+
 ## week-3 1.24~1.30
 
 I'll learn about Java, Spring Boot, AJAX, Fetch API.
