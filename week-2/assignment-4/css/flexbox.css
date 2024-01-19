@@ -4,8 +4,15 @@ body {
   min-height: 100vh;
 }
 
+.row-3,
+.row-4 {
+  display: none;
+}
+
 .row-1,
-.row-2 {
+.row-2,
+.row-3,
+.row-4 {
   flex: 1;
 }
 /* Media Queries */
@@ -17,6 +24,11 @@ body {
   .row-2,
   .col {
     display: flex;
+  }
+
+  .row-3,
+  .row-4 {
+    display: none;
   }
 
   .main-header {

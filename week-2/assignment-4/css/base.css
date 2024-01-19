@@ -73,6 +73,11 @@ a {
   text-align: center;
 }
 
+.row-3,
+.row-4 {
+  text-align: center;
+}
+
 .col {
   padding: 1em;
   background: #8b98a8;
@@ -102,7 +107,9 @@ a {
 
 @media (min-width: 0px) {
   .row-1,
-  .row-2 {
+  .row-2,
+  .row-3,
+  .row-4 {
     width: 90%;
     margin: 0 auto;
   }
@@ -113,7 +120,9 @@ a {
 }
 @media (min-width: 1200px) {
   .row-1,
-  .row-2 {
+  .row-2,
+  .row-3,
+  .row-4 {
     width: 90%;
     max-width: 1200px;
   }
