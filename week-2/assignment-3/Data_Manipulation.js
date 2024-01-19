@@ -1,43 +1,41 @@
-/*
-@groupByKey: return an object which shows the summed-up value of each key 返回一個對象，顯示每個鍵的總和
-
-This time, you may get letters from ‘a’ to ‘z’, try to avoid using ‘if’ or ‘switch’ to split each
-letter into different cases (e.g. if(letter == ‘a’) {…} else if (letter == ‘b’) {…} ), otherwise, your
-code will be very long
-這一次，你可能會得到從“a”到“z”的字母，盡量避免使用“if”或“switch”來拆分每個字母
-字母轉換為不同的大小寫（例如 if（letter == 'a'） {...} else if （letter == 'b'） {...} ），否則，你的代碼會很長。
-
-In the second function, the input may have the same key but different values, the
-output should have each key only once.
-在第二個函數中，輸入可能具有相同的鍵但值不同，輸出的每個鍵應該只有一次。
-*/
-
 function count(input) {
   // 使用 reduce 計算每個元素的數量
-  const countNumbers = input.reduce((allNumbers, number) => {
-    if (number in allNumbers) { // 如果number存在allNumbers，計數器加1
+  return input.reduce((allNumbers, number) => {
+    if (number in allNumbers) {
+      // 如果number存在allNumbers，計數器加1
       allNumbers[number]++;
-    } else {  // 如果number不存在allNumbers，初始值設為1
+    } else {
+      // 如果number不存在allNumbers，初始值設為1
       allNumbers[number] = 1;
     }
     return allNumbers;
-  }, {});  // 以物件顯示
-
-  return countNumbers;
+  }, {}); // 以物件顯示
 }
 let input1 = ["a", "b", "c", "a", "c", "a", "x"];
 console.log(count(input1)); // should print {a:3, b:1, c:2, x:1}
 
-// function groupByKey(input) {
-//   // your code here
-// }
-// let input2 = [
-//   { key: "a", value: 3 },
-//   { key: "b", value: 1 },
-//   { key: "c", value: 2 },
-//   { key: "a", value: 3 },
-//   { key: "c", value: 5 },
-// ];
+function groupByKey(input) {
+  return input.reduce((group, current) => {
+    // 宣告新的key
+    let newKey = current.key;
+    if (newKey in group) {
+      // 如果 key 已經存在，則累加對應的值
+      group[newKey] += current.value;
+    } else {
+      // 如果 key 不存在，初始值設為value
+      group[newKey] = current.value;
+    }
+    return group;
+  }, {});
+}
 
-// console.log(groupByKey(input2));
+let input2 = [
+  { key: "a", value: 3 },
+  { key: "b", value: 1 },
+  { key: "c", value: 2 },
+  { key: "a", value: 3 },
+  { key: "c", value: 5 },
+];
+
+console.log(groupByKey(input2));
 // should print {a:6, b:1, c:7}
