@@ -1,4 +1,4 @@
-package com.remoteassignments.Assignments.remote;
+package com.remoteassignments.assignments.remote;
 
 import org.springframework.stereotype.Service;
 
@@ -30,13 +30,6 @@ public class NumberService {
         }
     }
 
-    public String generateHtmlForm() {
-        return "<form action='/trackName' method='get'>" +  //get方法導到/trackName
-                "<label for='nameInput'> What is your name: </label>" +
-                "<input type='text' id='nameInput' name='username' required>" + // 輸入值，並設定要有值才可以提交
-                "<button type='submit'>Submit</button>" +
-                "</form>";
-    }
 
 }
 
