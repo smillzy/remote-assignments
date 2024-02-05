@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" th:href="@{/css/signUpStyle.css}"/>
+</head>
+<body>
+<div class="box-header">
+    <div class="box-title">Sign Up</div>
+</div>
+
+<form action='/signUpName' method='post'>
+
+    <div class="form-SignUpUserName">
+        <label for='userName'> UserName </label>
+        <input id="userName" name="userName" type="text">
+        <small class="error-msg"></small>
+    </div>
+
+    <div class="form-SignUpEmail">
+        <label for='email'> Email </label>
+        <input id="email" name="email" type="email">
+        <small class="error-msg"></small>
+    </div>
+
+    <div class="form-SignUpPassword">
+        <label for='password'> Password </label>
+        <input id="password" name="password" type="text">
+    </div>
+
+    <div class="SignUp-button">
+        <button id="SignUp-button" type="submit">Sign Up For Free</button>
+    </div>
+
+</form>
+
+<script src="ajaxSignUp.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log In</title>
+    <link rel="stylesheet" th:href="@{/css/logInStyle.css}"/>
+</head>
+<body>
+<div class="banner">
+    <h1 class="headline">Log In</h1>
+</div>
+
+<div>
+    <form action='/logIn' method='post'>
+
+        <div class="form-email">
+            <input id="email" name="email" type="email" placeholder="email">
+            <small class="error-msg"></small>
+        </div>
+
+        <div class="form-password">
+            <input id="password" name="password" type="text" placeholder="password">
+        </div>
+
+        <div class="form-err">
+            <small class="error-msg">[[${error}]]</small>
+        </div>
+
+        <div class="login-button">
+            <button id="login-button" onclick="logIn()" type="submit">Log In</button>
+        </div>
+
+    </form>
+
+    <form method='get'>
+
+        <div class="box-tools"> Create a Free Account!
+            <a href="http://localhost:8080/signUpForm" target="_self">Sign Up For Free</a>
+        </div>
+
+    </form>
+</div>
+<script src="ajaxLogIn.js"></script>
+</body>
+</html>
