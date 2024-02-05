@@ -25,7 +25,10 @@ public class BackEndService {
      * @param username Username retrieved from the cookie.
      */
     public String checkCookie(String username){
-        if(!username.isEmpty()){
+
+        boolean isUsernameEmpty = username.isEmpty();
+
+        if(!isUsernameEmpty){
             return "index";
         }else{
             return "logIn";

@@ -2,6 +2,8 @@ package com.remoteassignment.assignmentthree.entity;
 
 import jakarta.persistence.*;
 
+import javax.validation.constraints.NotNull;
+
 @Entity
 @Table(name = "user", uniqueConstraints = {@UniqueConstraint(columnNames = "email")})
 public class User {
@@ -9,10 +11,11 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
+    @NotNull
     private String userName;
-
+    @NotNull
     private String email;
+    @NotNull
     private String password;
 
     public User() {

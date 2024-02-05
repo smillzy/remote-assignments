@@ -25,8 +25,7 @@ public class RemoteController {
 
     /**
      * Handles the root ("/") URL request.
-     * If the user's cookie exist, return index.html.
-     * Else return logIn.html.
+     * Invoke the checkCookie function from the backEndService to check whether the user's cookie exists.
      *
      * @param username Username retrieved from the cookie.
      */
@@ -37,8 +36,7 @@ public class RemoteController {
 
     /**
      * Handles the root ("/homepage") URL request.
-     * If the user's cookie exist, return index.html.
-     * Else return logIn.html.
+     * Invoke the checkCookie function from the backEndService to check whether the user's cookie exists.
      *
      * @param username Username retrieved from the cookie.
      */
@@ -57,7 +55,7 @@ public class RemoteController {
      * @param email    Get user's email from the request parameters.
      * @param password Get user's password from the request parameters.
      */
-    @PostMapping("/logIn")
+    @PostMapping("/log-in")
     public String logIn(@CookieValue(value = "username", defaultValue = "") String username,
                          HttpServletResponse response,Model model,
                          @RequestParam("email") String email,
@@ -69,7 +67,7 @@ public class RemoteController {
      * Handles the "/signUpForm" URL request, direct to the signUp.html.
      *
      */
-    @GetMapping("/signUpForm")
+    @GetMapping("/sign-up-form")
     public String signUp() {
             return "signUp";
     }
@@ -81,7 +79,7 @@ public class RemoteController {
      * @param email    Get nsw user's email from the request parameters.
      * @param password Get nsw user's password from the request parameters.
      */
-    @PostMapping("/signUpName")
+    @PostMapping("/sign-up-name")
     public String create(@RequestParam("userName") String userName,
                          @RequestParam("email") String email,
                          @RequestParam("password") String password){

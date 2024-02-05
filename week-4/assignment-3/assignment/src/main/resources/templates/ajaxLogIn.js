@@ -14,7 +14,7 @@ function postData(event) {
 
     const formData = new FormData(form);
 
-    fetch('http://localhost:3000/logIn', {
+    fetch('http://localhost:3000/log-in', {
         method: 'POST', // type of req
         headers: {
             'Content-Type': 'application/json'
