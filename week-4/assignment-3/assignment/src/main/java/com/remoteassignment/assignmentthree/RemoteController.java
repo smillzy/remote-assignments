@@ -80,11 +80,17 @@ public class RemoteController {
      * @param password Get nsw user's password from the request parameters.
      */
     @PostMapping("/sign-up-name")
-    public String create(@RequestParam("userName") String userName,
+    public String create(@CookieValue(value = "username", defaultValue = "") String username,
+                         HttpServletResponse response,Model model,
+                         @RequestParam("userName") String userName,
                          @RequestParam("email") String email,
-                         @RequestParam("password") String password,
-                         Model model){
-        return backEndService.createData(userName, email, password, model);
+                         @RequestParam("password") String password){
+        return backEndService.createData(username, response, model, userName, email, password);
+    }
+
+    @GetMapping("/member-page")
+    public String member() {
+        return "index";
     }
 
 }

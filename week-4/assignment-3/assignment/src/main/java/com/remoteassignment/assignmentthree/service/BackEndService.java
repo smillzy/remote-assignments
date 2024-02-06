@@ -29,7 +29,7 @@ public class BackEndService {
         boolean isUsernameEmpty = username.isEmpty();
 
         if(!isUsernameEmpty){
-            return "index";
+            return "redirect:/member-page";
         }else{
             return "logIn";
         }
@@ -59,7 +59,7 @@ public class BackEndService {
             response.addCookie(cookie);  // Set it to a cookie.
 
             model.addAttribute("userName", nameFromDB);
-            return "index";
+            return "redirect:/member-page";
         } else {
             model.addAttribute("error", "Invalid email or password. Please try again.");
             return "logIn";
@@ -74,7 +74,7 @@ public class BackEndService {
      * @param email    Get user's email from the request parameters.
      * @param password Get user's password from the request parameters.
      */
-    public String createData(String userName, String email, String password, Model model){
+    public String createData(String username, HttpServletResponse response, Model model, String userName, String email, String password){
 
         if (userRepo.existsByEmail(email)) {
             model.addAttribute("error", "This email is already be used. Please choose another email.");
@@ -83,7 +83,15 @@ public class BackEndService {
             User newUser = new User(userName, email, password);
             userRepo.save(newUser);  // Save data to MySQL.
 
-            return "redirect:/homepage";
+            String nameFromDB = newUser.getUserName();
+
+            Cookie cookie = new Cookie("username", nameFromDB);
+            cookie.setMaxAge(60 * 60 * 24); // Set cookie will expire after 24 hours.
+            response.addCookie(cookie);  // Set it to a cookie.
+
+            model.addAttribute("userName", nameFromDB);
+
+            return "redirect:/member-page";
         }
     }
 }
