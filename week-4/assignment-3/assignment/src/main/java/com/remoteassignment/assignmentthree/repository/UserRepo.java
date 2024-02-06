@@ -12,4 +12,6 @@ import java.util.Optional;
 public interface UserRepo extends CrudRepository<User, Integer>{  // <entityClass, idDataType>
     User findByEmailAndPassword(String email, String password);
 
+    boolean existsByEmail(String email);
+
 }

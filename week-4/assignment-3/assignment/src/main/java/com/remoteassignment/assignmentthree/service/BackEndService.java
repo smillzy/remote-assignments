@@ -74,11 +74,16 @@ public class BackEndService {
      * @param email    Get user's email from the request parameters.
      * @param password Get user's password from the request parameters.
      */
-    public String createData(String userName, String email, String password){
+    public String createData(String userName, String email, String password, Model model){
 
-        User newUser = new User(userName, email, password);
-        userRepo.save(newUser);  // Save data to MySQL.
+        if (userRepo.existsByEmail(email)) {
+            model.addAttribute("error", "This email is already be used. Please choose another email.");
+            return "signUp";
+        }else{
+            User newUser = new User(userName, email, password);
+            userRepo.save(newUser);  // Save data to MySQL.
 
-        return "redirect:/homepage";
+            return "redirect:/homepage";
+        }
     }
 }

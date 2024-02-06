@@ -82,8 +82,9 @@ public class RemoteController {
     @PostMapping("/sign-up-name")
     public String create(@RequestParam("userName") String userName,
                          @RequestParam("email") String email,
-                         @RequestParam("password") String password){
-        return backEndService.createData(userName, email, password);
+                         @RequestParam("password") String password,
+                         Model model){
+        return backEndService.createData(userName, email, password, model);
     }
 
 }
